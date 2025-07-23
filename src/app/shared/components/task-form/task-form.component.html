@@ -1,0 +1,47 @@
+<div class="form-container">
+  <h2 matDialogTitle class="form-title">
+    {{ isEdit ? 'Editar Tarea' : 'Crear Tarea' }}
+  </h2>
+
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="form-content">
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title" autocomplete="off" placeholder="Ingresa el título de la tarea" />
+        <mat-error *ngIf="taskForm.get('title')?.hasError('required')">
+          El título es requerido
+        </mat-error>
+        <mat-error *ngIf="taskForm.get('title')?.hasError('minlength')">
+          El título debe tener al menos 3 caracteres
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Descripción (opcional)</mat-label>
+        <textarea matInput formControlName="description" rows="3" placeholder="Describe la tarea..."></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="form-field checkbox-field">
+      <mat-checkbox formControlName="completed">
+        Marcar como completada
+      </mat-checkbox>
+    </div>
+
+    <div mat-dialog-actions class="form-actions">
+      <button mat-button type="button" (click)="onCancel()" class="btn-cancel">
+        Cancelar
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="taskForm.invalid"
+        class="btn-submit">
+        {{ isEdit ? 'Actualizar' : 'Crear' }}
+      </button>
+    </div>
+  </form>
+</div>
