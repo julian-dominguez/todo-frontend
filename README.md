@@ -12,6 +12,10 @@ npm install
 ## Ejecución como desarrollo
 
 Para ejecutar la aplicación en modo desarrollo, utilice `ng serve`.
+Por defecto de inicia en el siguiente puerto
+```
+http://localhost:4200 
+```
 
 ## IMPORTANTE:
 
