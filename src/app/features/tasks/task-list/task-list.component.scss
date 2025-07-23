@@ -1,0 +1,48 @@
+.w-100 {
+  width: 100%;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell, td.mat-cell {
+  padding: 8px 16px;
+}
+
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .filters-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .filter-options {
+    min-width: fit-content;
+  }
+
+  .w-100 {
+    flex: 1;
+  }
+}
